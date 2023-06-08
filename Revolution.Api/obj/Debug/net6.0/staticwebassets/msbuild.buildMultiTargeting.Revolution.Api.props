@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Revolution.Api.props" />
+</Project>

@@ -1,0 +1,17 @@
+D:\Downloads\Диплом\Diplom\Revolution\Revolution.Service\bin\Debug\net6.0\Revolution.Service.deps.json
+D:\Downloads\Диплом\Diplom\Revolution\Revolution.Service\bin\Debug\net6.0\Revolution.Service.dll
+D:\Downloads\Диплом\Diplom\Revolution\Revolution.Service\bin\Debug\net6.0\Revolution.Service.pdb
+D:\Downloads\Диплом\Diplom\Revolution\Revolution.Service\bin\Debug\net6.0\Revolution.Data.dll
+D:\Downloads\Диплом\Diplom\Revolution\Revolution.Service\bin\Debug\net6.0\Revolution.Repo.dll
+D:\Downloads\Диплом\Diplom\Revolution\Revolution.Service\bin\Debug\net6.0\Revolution.Repo.pdb
+D:\Downloads\Диплом\Diplom\Revolution\Revolution.Service\bin\Debug\net6.0\Revolution.Data.pdb
+D:\Downloads\Диплом\Diplom\Revolution\Revolution.Service\obj\Debug\net6.0\Revolution.Service.csproj.AssemblyReference.cache
+D:\Downloads\Диплом\Diplom\Revolution\Revolution.Service\obj\Debug\net6.0\Revolution.Service.GeneratedMSBuildEditorConfig.editorconfig
+D:\Downloads\Диплом\Diplom\Revolution\Revolution.Service\obj\Debug\net6.0\Revolution.Service.AssemblyInfoInputs.cache
+D:\Downloads\Диплом\Diplom\Revolution\Revolution.Service\obj\Debug\net6.0\Revolution.Service.AssemblyInfo.cs
+D:\Downloads\Диплом\Diplom\Revolution\Revolution.Service\obj\Debug\net6.0\Revolution.Service.csproj.CoreCompileInputs.cache
+D:\Downloads\Диплом\Diplom\Revolution\Revolution.Service\obj\Debug\net6.0\Revolution.Service.csproj.CopyComplete
+D:\Downloads\Диплом\Diplom\Revolution\Revolution.Service\obj\Debug\net6.0\Revolution.Service.dll
+D:\Downloads\Диплом\Diplom\Revolution\Revolution.Service\obj\Debug\net6.0\refint\Revolution.Service.dll
+D:\Downloads\Диплом\Diplom\Revolution\Revolution.Service\obj\Debug\net6.0\Revolution.Service.pdb
+D:\Downloads\Диплом\Diplom\Revolution\Revolution.Service\obj\Debug\net6.0\ref\Revolution.Service.dll

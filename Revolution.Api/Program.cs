@@ -10,7 +10,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 var ConnectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 var  MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
-builder.Services.AddDbContext < AplicationContext > (options => options.UseNpgsql("Host=localhost;Port=5432;Database=tiraet2;Username=postgres;Password=1"));
+builder.Services.AddDbContext < AplicationContext > (options => options.UseNpgsql("Host=localhost;Port=5432;Database=revolution;Username=postgres;Password=1"));
 
 builder.Services.AddCors(options =>
 {

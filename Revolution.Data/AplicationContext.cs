@@ -5,11 +5,7 @@ namespace Revolution.Data;
 
     public class AplicationContext: DbContext
     {
-        public AplicationContext()
-        {
-        
-        }
-       protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
            => optionsBuilder.UseNpgsql("Host=localhost;" +
                                        "Port=5432;" +
                                        "Database=revolution;" +
