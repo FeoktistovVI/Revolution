@@ -9,8 +9,8 @@ public class AddGradesRequest
     public long SubjectId { get; set; }
     
     public long Grade { get; set; }
-    
-    public string Date { get; set; }
-    
-    
+
+    public string Date { get; set; } = string.Empty;
+
+
 }

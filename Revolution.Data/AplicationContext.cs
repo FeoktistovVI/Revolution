@@ -5,12 +5,17 @@ namespace Revolution.Data;
 
     public class AplicationContext: DbContext
     {
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        public AplicationContext(DbContextOptions<AplicationContext> options) : base(options)
+        {
+            
+        }
+        /*protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
            => optionsBuilder.UseNpgsql("Host=localhost;" +
                                        "Port=5432;" +
                                        "Database=revolution;" +
                                        "Username=postgres;" +
                                        "Password=1");
+                                       */
         public DbSet<Area> Areas { get; set; }
         public DbSet<Events> Events { get; set; }
         public DbSet<EventsResult> EventsResults { get; set; }
