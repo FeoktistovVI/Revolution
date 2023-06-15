@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using PublishingHouse.Interfaces.Extensions.Pagination;
 using Revolution.Data;
+using Revolution.Data.Models;
 using Revolution.Repo.Enums;
 using Revolution.Repo.Interfaces;
 using Revolution.Repo.Models;
@@ -16,12 +17,14 @@ public class EventsService : IEvents
     {
         _db = db;
     }
+
     public async Task<Events> Add(long id, string eventsName, string eventsData, string venueName, long areaId)
     {
-        if (await _db.Events.AllAsync(x => x.EventsName == eventsName))
-            throw new TirException($"Events {eventsName} already exists!", EnumErrorCode.EntityIsAlreadyExists);
+        if (await _db.Events.FirstOrDefaultAsync(x => x.EventsName == eventsName)!=null)
+           throw new TirException($"Events {eventsName} already exists!", EnumErrorCode.EntityIsAlreadyExists);
         var events = new Events
-        {	Id = id,
+        {	
+            Id = id,
             EventsName = eventsName,
             EventsData = eventsData,
             VenueName = venueName,
@@ -29,7 +32,6 @@ public class EventsService : IEvents
         };
         await _db.AddAsync(events);
         await _db.SaveChangesAsync();
-		
         return events;
     }
 

@@ -4,7 +4,7 @@ namespace Revolution.Repo.Models.Grades;
 
 public class SearchGradesResponse : IPaginationResponse<GradesShortModel>
 {
-    public Page Page { get; set; }
+    public Page Page { get; set; } = new Page();
     public long Count { get; set; }
     public IReadOnlyCollection<GradesShortModel> Items { get; set; }
 }

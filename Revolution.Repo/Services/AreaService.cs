@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using PublishingHouse.Interfaces.Extensions.Pagination;
 using Revolution.Data;
+using Revolution.Data.Models;
 using Revolution.Repo.Enums;
 using Revolution.Repo.Interfaces;
 using Revolution.Repo.Models;
@@ -20,10 +21,12 @@ public class AreaService : IArea
     
     public async Task<Area> Add(long id, string areaName)
     {
-        if (await _db.Areas.AllAsync(x => x.AreaName == areaName))
-            throw new TirException($"Area {areaName} already exists!", EnumErrorCode.EntityIsAlreadyExists);
+        if (await _db.Areas.FirstOrDefaultAsync(x => x.AreaName == areaName) != null)
+            throw new TirException($"Area {areaName} already exists!", EnumErrorCode.EntityIsAlreadyExists); 
+        
         var area = new Area
-        {	Id = id,
+        {	
+            Id = id,
             AreaName = areaName,
         };
         await _db.AddAsync(area);
@@ -40,7 +43,7 @@ public class AreaService : IArea
         				|| (x.Id.ToString()).Contains(model.Search)
         				).GetPageAsync<SearchAreaResponse, Area, AreaShortModel>(model, x => new AreaShortModel
         			{
-        				Id =x.Id,
+        				/*Id =x.Id,*/
         				AreaName = x.AreaName
                     });
     }
@@ -50,7 +53,7 @@ public class AreaService : IArea
         return await _db.Areas.GetPageAsync<GetAreaResponse, Area, AreaShortModel>(request, area =>
         			new AreaShortModel
         			{
-                        Id =area.Id,
+                        /*Id =area.Id,*/
         				AreaName = area.AreaName,
                     });
     }

@@ -1,17 +1,17 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace Revolution.Data;
+namespace Revolution.Data.Models;
 
 public class Events
 {
     [Key]
     public long Id { get; set; }
     [Required]
-    public string EventsName { get; set; } = String.Empty;
+    public string EventsName { get; set; } 
 
-    public string EventsData { get; set; } = string.Empty;
-    public string VenueName { get; set; } = String.Empty;
+    public string EventsData { get; set; }
+    public string VenueName { get; set; } 
     public long AreaId { get; set; }
     
-    public Area Area { get; set; }
+    public ICollection<EventsResult> EventsResults { get; set; }
 }

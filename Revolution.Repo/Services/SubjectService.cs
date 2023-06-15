@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using PublishingHouse.Interfaces.Extensions.Pagination;
 using Revolution.Data;
+using Revolution.Data.Models;
 using Revolution.Repo.Enums;
 using Revolution.Repo.Interfaces;
 using Revolution.Repo.Models;
@@ -19,7 +20,7 @@ public class SubjectService : ISubject
     
     public async Task<Subject> Add(long id, string name)
     {
-        if (await _db.Subjects.AllAsync(x => x.Name == name))
+        if (await _db.Subjects.FirstOrDefaultAsync(x => x.Name == name)!=null)
             throw new TirException($"Subject {name} already exists!", EnumErrorCode.EntityIsAlreadyExists);
         var subject = new Subject 
         {	Id = id,

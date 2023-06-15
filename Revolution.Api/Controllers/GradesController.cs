@@ -23,7 +23,7 @@ public class GradesController : Microsoft.AspNetCore.Mvc.Controller
     [Route($"{nameof(Add)}")]
     [ProducesResponseType(200, Type = typeof(BaseResponse<long>))]
     [ProducesResponseType(400, Type = typeof(BaseResponse))]
-    [Authorize]
+    /*[Authorize]*/
 
     public async Task<BaseResponse<long>> Add([FromBody] AddGradesRequest model)
     {
@@ -57,7 +57,7 @@ public class GradesController : Microsoft.AspNetCore.Mvc.Controller
     [Route($"{nameof(Rename)}")]
     [ProducesResponseType(200, Type = typeof(BaseResponse))]
     [ProducesResponseType(400, Type = typeof(BaseResponse))]
-    [Authorize]
+    /*[Authorize]*/
     public async Task<BaseResponse> Rename([FromQuery] long id, [FromQuery] long studentId, [FromQuery] long subjectId, [FromQuery] long grade, [FromQuery] string date)
     {
         await _grades.Update(id, studentId, studentId, grade, date);
@@ -68,7 +68,7 @@ public class GradesController : Microsoft.AspNetCore.Mvc.Controller
     [Route($"{nameof(Delete)}")]
     [ProducesResponseType(200, Type = typeof(BaseResponse))]
     [ProducesResponseType(400, Type = typeof(BaseResponse))]
-    [Authorize]
+    /*[Authorize]*/
    
     public async Task<BaseResponse> Delete([FromQuery] long id)
     {

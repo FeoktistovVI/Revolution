@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using PublishingHouse.Interfaces.Extensions.Pagination;
 using Revolution.Data;
+using Revolution.Data.Models;
 using Revolution.Repo.Enums;
 using Revolution.Repo.Interfaces;
 using Revolution.Repo.Models;
@@ -19,7 +20,7 @@ public class GradesService : IGrades
 
     public async Task<GradesShortModel> Add(long id, long subjectId, long studentId , long grade, string date)
     {
-        if (await _db.Grades.AllAsync(x => x.Id != id))
+        if (await _db.Grades.FirstOrDefaultAsync(x => x.Id != id)!=null)
             throw new TirException($"Grades {id} is not exists!", EnumErrorCode.EntityIsNotFound);
 		
         var grades = new Grades

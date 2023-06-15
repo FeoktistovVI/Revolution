@@ -4,7 +4,7 @@ namespace Revolution.Repo.Models.Parents;
 
 public class SearchParentsResponse : IPaginationResponse<ParentsShortModel>
 {
-    public Page Page { get; set; }
+    public Page Page { get; set; } = new Page();
     public long Count { get; set; }
     public IReadOnlyCollection<ParentsShortModel> Items { get; set; }
 }

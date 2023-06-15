@@ -4,8 +4,8 @@ namespace Revolution.Repo.Models.EventsResult;
 
 public class SearchEventsResultResponse : IPaginationResponse<EventsResultShortModel>
 {
-    
-    public Page Page { get; set; }
+
+    public Page Page { get; set; } = new Page();
     
     public long Count { get; set; }
     

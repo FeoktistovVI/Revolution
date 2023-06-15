@@ -1,13 +1,13 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Revolution.Data;
+namespace Revolution.Data.Models;
 
 public class Subject
 {
     [Key]
     public long Id { get; set; }
     [Required]
-    public string Name { get; set; } = String.Empty;
-    public ICollection<Student> Students { get; set; }
+    public string Name { get; set; } 
+
 }

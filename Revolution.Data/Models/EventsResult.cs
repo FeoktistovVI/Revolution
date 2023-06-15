@@ -1,6 +1,7 @@
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Revolution.Data;
+namespace Revolution.Data.Models;
 
 public class EventsResult
 {
@@ -8,11 +9,11 @@ public class EventsResult
     public long Id { get; set; }
     [Required] 
     public long StudentId { get; set; }
-    public Student Student { get; set; }
-    public string EventsResultName { get; set; } = String.Empty;
+    [ForeignKey("StudentId")]
+    
+    public string EventsResultName { get; set; } 
     
     public long CertificateNumber { get; set; }
     public long EventsId { get; set; }
-    public Events Events { get; set; }
-    public ICollection<Student> Students { get; set; }
+    
 }

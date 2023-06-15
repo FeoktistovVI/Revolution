@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using PublishingHouse.Interfaces.Extensions.Pagination;
 using Revolution.Data;
+using Revolution.Data.Models;
 using Revolution.Repo.Enums;
 using Revolution.Repo.Interfaces;
 using Revolution.Repo.Models;
@@ -18,8 +19,9 @@ public class EventsResultService : IEventsResult
     }
     public async Task<EventsResult> Add(long id, long studentId, string eventsresultName, long sertificateNumber, long eventId)
     {
-        if (await _db.EventsResults.AllAsync(x => x.EventsResultName == eventsresultName))
-            throw new TirException($"EventsResult {eventsresultName} already exists!", EnumErrorCode.EntityIsAlreadyExists);
+        if (await _db.EventsResults.FirstOrDefaultAsync(x => x.EventsResultName == eventsresultName) != null)
+            throw new TirException($"EventsResult {eventsresultName} already exists!", EnumErrorCode.EntityIsAlreadyExists); 
+       
         var eventsresult = new EventsResult
         {	Id = id,
             EventsResultName  = eventsresultName,
@@ -64,11 +66,11 @@ public class EventsResultService : IEventsResult
 
     public async Task Update(long id, long studentId, string eventsresultName, long sertificateNumber, long eventId)
     {
-        var eventsresult = await _db.EventsResults.FirstOrDefaultAsync(x => x.Id == id);
-        if (eventsresult is null)
+        var eventsResult = await _db.EventsResults.FirstOrDefaultAsync(x => x.Id == id);
+        if (eventsResult is null)
             throw new TirException($" Id = {id} is not found!", EnumErrorCode.EntityIsNotFound);
         if (!string.IsNullOrWhiteSpace(eventsresultName))
-            eventsresult.EventsResultName = eventsresultName;
+            eventsResult.EventsResultName = eventsresultName;
         await _db.SaveChangesAsync();
     }
 

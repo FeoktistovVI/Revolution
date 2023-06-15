@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace Revolution.Data;
+namespace Revolution.Data.Models;
 
 public class Parents
 {
@@ -10,8 +10,8 @@ public class Parents
     public long StudentId { get; set; }
     
     public Student Student { get; set; }
-    public string FirstName { get; set; } = String.Empty;
-    public string LastName { get; set; } = String.Empty;
-    public string Phone { get; set; } = String.Empty;
+    public string FirstName { get; set; } 
+    public string LastName { get; set; } 
+    public string Phone { get; set; } 
 
 }

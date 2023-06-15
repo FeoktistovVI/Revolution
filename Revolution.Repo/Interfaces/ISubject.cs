@@ -1,4 +1,4 @@
-using Revolution.Data;
+using Revolution.Data.Models;
 using Revolution.Repo.Models.Subject;
 
 namespace Revolution.Repo.Interfaces;

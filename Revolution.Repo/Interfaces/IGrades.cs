@@ -1,4 +1,5 @@
 using Revolution.Repo.Models.Grades;
+using Revolution.Data.Models;
 
 namespace Revolution.Repo.Interfaces;
 

@@ -23,9 +23,9 @@ public class EventsController : Microsoft.AspNetCore.Mvc.Controller
     [Route($"{nameof(Add)}")]
     [ProducesResponseType(200, Type = typeof(BaseResponse<long>))]
     [ProducesResponseType(400, Type = typeof(BaseResponse))]
-    [Authorize]
+    /*[Authorize]*/
 
-    public async Task<BaseResponse<long>> Add([FromBody] AddEventsRequest model)
+    public async Task<BaseResponse<long>>? Add([FromBody] AddEventsRequest model)
     {
         var result = await _events.Add(model.Id, model.EventsName, model.EventsData, model.VenueName, model.AreaId);
         return new BaseResponse<long>(result?.Id ?? 0);
@@ -57,7 +57,7 @@ public class EventsController : Microsoft.AspNetCore.Mvc.Controller
     [Route($"{nameof(Rename)}")]
     [ProducesResponseType(200, Type = typeof(BaseResponse))]
     [ProducesResponseType(400, Type = typeof(BaseResponse))]
-    [Authorize]
+    /*[Authorize]*/
     public async Task<BaseResponse> Rename([FromQuery] long id, [FromQuery] string eventsName, [FromQuery] string eventsData, [FromQuery] string venueName, [FromQuery] long areaId)
     {
         await _events.Update(id, eventsName, eventsData, venueName, areaId);
@@ -68,7 +68,7 @@ public class EventsController : Microsoft.AspNetCore.Mvc.Controller
     [Route($"{nameof(Delete)}")]
     [ProducesResponseType(200, Type = typeof(BaseResponse))]
     [ProducesResponseType(400, Type = typeof(BaseResponse))]
-    [Authorize]
+    /*[Authorize]*/
    
     public async Task<BaseResponse> Delete([FromQuery] long id)
     {

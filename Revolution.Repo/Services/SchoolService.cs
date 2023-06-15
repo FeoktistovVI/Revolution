@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using PublishingHouse.Interfaces.Extensions.Pagination;
 using Revolution.Data;
+using Revolution.Data.Models;
 using Revolution.Repo.Enums;
 using Revolution.Repo.Interfaces;
 using Revolution.Repo.Models;
@@ -19,7 +20,7 @@ public class SchoolService : ISchool
     
     public async Task<School> Add(long id, string name, long areaId)
     {
-        if (await _db.Schools.AllAsync(x => x.Name == name))
+        if (await _db.Schools.FirstOrDefaultAsync(x => x.Name == name)!=null)
             throw new TirException($"School {name} already exists!", EnumErrorCode.EntityIsAlreadyExists);
         var school = new School
         {	Id = id,

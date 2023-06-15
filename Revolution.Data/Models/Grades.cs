@@ -1,7 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.Globalization;
 
-namespace Revolution.Data
+namespace Revolution.Data.Models
 
 {
     public class Grades
@@ -19,8 +19,7 @@ namespace Revolution.Data
         
         public long Grade { get; set; }
 
-        public string Date { get; set; } = string.Empty;
+        public string Date { get; set; } 
         
-        public ICollection<Student> Students { get; set; }
     }
 }

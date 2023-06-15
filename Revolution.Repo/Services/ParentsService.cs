@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using PublishingHouse.Interfaces.Extensions.Pagination;
 using Revolution.Data;
+using Revolution.Data.Models;
 using Revolution.Repo.Enums;
 using Revolution.Repo.Interfaces;
 using Revolution.Repo.Models;
@@ -19,7 +20,7 @@ public class ParentsService : IParents
 
     public async Task<ParentsShortModel> Add(long id, long studentId, string firstName, string lastName, string phone)
     {
-        if (await _db.Parents.AllAsync(x => x.Id != id))
+        if (await _db.Parents.FirstOrDefaultAsync(x => x.Id != id)!=null)
             throw new TirException($"Parents {id} is not exists!", EnumErrorCode.EntityIsNotFound);
 		
         var parent = new Parents

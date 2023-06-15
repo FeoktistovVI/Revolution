@@ -4,7 +4,7 @@ namespace Revolution.Repo.Models.School;
 
 public class SearchSchoolResponse : IPaginationResponse<SchoolShortModel>
 {
-    public Page Page { get; set; }
+    public Page Page { get; set; } = new Page();
     public long Count { get; set; }
     public IReadOnlyCollection<SchoolShortModel> Items { get; set; }
 }
